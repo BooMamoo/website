@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/data/device', 'DataController@device');
+
+Route::get('/', 'IndexController@index');
+Route::get('{any}', 'IndexController@index')->where('any', '.*');
