@@ -1,0 +1,12 @@
+<div>
+	Info
+</div>
+
+<div>
+	{{ info.name }}
+	<div ng-repeat="map in info.mappings">
+		{{ map.type.type }}
+		<button ng-click="getData(map.type.id)">info</button>
+
+	</div>
+</div>

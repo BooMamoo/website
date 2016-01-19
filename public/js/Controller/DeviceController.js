@@ -1,4 +1,4 @@
-app.controller('DeviceController', function($scope, $http, data) {
+app.controller('DeviceController', function($scope, $location, data) {
 	$scope.devices = data.data;
 
 	$scope.$watch('search', function () 
@@ -16,4 +16,8 @@ app.controller('DeviceController', function($scope, $http, data) {
             }
         }
     });
+
+    $scope.getInfo = function(device_id) {
+        $location.path('/device/' + device_id + '/info');
+    }
 });

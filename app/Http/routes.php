@@ -12,6 +12,8 @@
 */
 
 Route::get('/data/device', 'DataController@device');
+Route::get('/data/device/{device_id}/info', 'DataController@getInfo');
+Route::get('/data/device/{device_id}/type/{type_id}/data', 'DataController@getData');
 
 Route::get('/', 'IndexController@index');
 Route::get('{any}', 'IndexController@index')->where('any', '.*');
