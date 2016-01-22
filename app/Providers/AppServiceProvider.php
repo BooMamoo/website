@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $server_ip_address = 'http://192.168.1.49';
+
+        config([
+            'ip' => $server_ip_address
+        ]);
     }
 }

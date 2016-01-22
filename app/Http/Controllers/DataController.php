@@ -12,7 +12,7 @@ class DataController extends Controller
 {
     public function device()
     {
-    	$ip = 'http://192.168.1.49';
+    	$ip = config('ip');
     	$url = $ip . '/api/device';
         $client = new Client();
         $response = $client->request('GET', $url);
@@ -22,7 +22,7 @@ class DataController extends Controller
 
     public function getInfo($device_id)
     {
-    	$ip = 'http://192.168.1.49';
+    	$ip = config('ip');
     	$url = $ip . '/api/device/' . $device_id . '/info';
         $client = new Client();
         $response = $client->request('GET', $url);
@@ -32,7 +32,7 @@ class DataController extends Controller
 
     public function getData($device_id, $type_id)
     {
-    	$ip = 'http://192.168.1.49';
+    	$ip = config('ip');
     	$url = $ip . '/api/device/' . $device_id . '/type/' . $type_id .'/data';
         $client = new Client();
         $response = $client->request('GET', $url);
