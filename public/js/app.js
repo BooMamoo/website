@@ -2,7 +2,8 @@ var app = angular.module('app', ['ngRoute', 'ngResource']);
 
 app.config(function($routeProvider, $locationProvider) {
 	$routeProvider.when('/', {
-		templateUrl: 'pages/index.html'
+		templateUrl: 'pages/index.html',
+		controller: 'IndexController'
 	});
 
 	$routeProvider.when('/device/', {
