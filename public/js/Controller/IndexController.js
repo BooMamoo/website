@@ -13,5 +13,4 @@ app.controller('IndexController', function($scope) {
             $(".navbar-fixed").removeClass("opacity");
         }
     });
-
 });

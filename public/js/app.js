@@ -11,7 +11,7 @@ app.config(function($routeProvider, $locationProvider) {
 		controller: 'DeviceController',
 		resolve: {
 			data: ['$http', function($http){
-				return $http.get("data/device");
+				return $http.get("data/local");
 			}]
 		}
 	});

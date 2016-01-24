@@ -10,10 +10,20 @@ use GuzzleHttp\Client;
 
 class DataController extends Controller
 {
-    public function device()
+    public function local()
+    {
+        $ip = config('ip');
+        $url = $ip . '/api/local';
+        $client = new Client();
+        $response = $client->request('GET', $url);
+
+        return $response->getBody()->getContents();
+    }
+
+    public function device($local_id)
     {
     	$ip = config('ip');
-    	$url = $ip . '/api/device';
+    	$url = $ip . '/api/local/'. $local_id .'/device';
         $client = new Client();
         $response = $client->request('GET', $url);
 

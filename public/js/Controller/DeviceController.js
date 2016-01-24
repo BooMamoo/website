@@ -1,5 +1,18 @@
-app.controller('DeviceController', function($scope, $location, data) {
-	$scope.devices = data.data;
+app.controller('DeviceController', function($scope, $http, $location, data) {
+    $scope.locals = data.data;
+
+    $scope.$watch('idLocal', function () 
+    {
+        if($scope.idLocal != undefined)
+        {
+            $http.get("/data/local/" + $scope.idLocal + "/device")
+            .success(function(response) {
+                $scope.devices = response;
+                $scope.tmp = response;
+                $scope.search = undefined;
+            });
+        }
+    });
 
 	$scope.$watch('search', function () 
     {
@@ -7,11 +20,11 @@ app.controller('DeviceController', function($scope, $location, data) {
         {
         	$scope.devices = [];
 
-            for(var i = 0 ; i < data.data.length ; i++)
+            for(var i = 0 ; i < $scope.tmp.length ; i++)
             {
-            	if(data.data[i].name.toLowerCase().search($scope.search.toLowerCase()) > -1)
+            	if($scope.tmp[i].name.toLowerCase().search($scope.search.toLowerCase()) > -1)
             	{
-            		$scope.devices.push(data.data[i]);
+            		$scope.devices.push($scope.tmp[i]);
             	}
             }
         }

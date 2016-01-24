@@ -34,6 +34,8 @@
 
 		<!-- Directive -->
 
+		<script src="js/Directive/RepeatDirective.js"></script>
+
 		<title> IoT PAS </title>
 		<link rel="shortcut icon" href="../picture/icon-web.png" type="image/png">
 	</head>
@@ -112,6 +114,8 @@
 					}
 				);
 
+				$('select').material_select();
+				
 				@yield('script')
 
 			});
