@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">	
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!-- <link rel="stylesheet" href="css/materialize.min.css"> -->
+		<link rel="stylesheet" href="css/angular-chart.css">
 		<link rel="stylesheet" href="css/template.css">
 
 		<script src="js/jquery.min.js"></script>
@@ -21,6 +22,8 @@
 		<script src="js/angular.js"></script> 
 		<script src="js/angular-route.js"></script> 
 		<script src="js/angular-resource.js"></script>
+		<script src="js/Chart.js"></script> 
+		<script src="js/angular-chart.js"></script> 
 		<script src="js/app.js"></script>
 
 		<!-- Controller -->
@@ -29,6 +32,7 @@
 		<script src="js/Controller/DeviceController.js"></script>
 		<script src="js/Controller/DeviceInfoController.js"></script>
 		<script src="js/Controller/DeviceDataController.js"></script>
+		<script src="js/Controller/DeviceChartController.js"></script>
 
 		<!-- Factory -->
 

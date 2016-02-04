@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngResource']);
+var app = angular.module('app', ['ngRoute', 'ngResource', 'chart.js']);
 
 app.config(function($routeProvider, $locationProvider) {
 	$routeProvider.when('/', {
@@ -31,7 +31,17 @@ app.config(function($routeProvider, $locationProvider) {
 		controller: 'DeviceDataController',
 		resolve: {
 			data: ['$http', '$route', function($http, $route){
-				return $http.get("data/device/" + $route.current.params.device + "/type/" + $route.current.params.type +"/data");
+				return $http.get("data/device/" + $route.current.params.device + "/type/" + $route.current.params.type + "/data");
+			}]
+		}
+	});
+
+	$routeProvider.when('/device/:device/type/:type/chart', {
+		templateUrl: 'pages/chart.html',
+		controller: 'DeviceChartController',
+		resolve: {
+			data: ['$http', '$route', function($http, $route){
+				return $http.get("data/device/" + $route.current.params.device + "/type/" + $route.current.params.type + "/chart");
 			}]
 		}
 	});
