@@ -46,6 +46,11 @@ app.config(function($routeProvider, $locationProvider) {
 		}
 	});
 
+	$routeProvider.when('/api', {
+		templateUrl: 'pages/api.html',
+		controller: 'ApiController'
+	});
+
 	$routeProvider.otherwise({
 		redirectTo: '/'
 	});

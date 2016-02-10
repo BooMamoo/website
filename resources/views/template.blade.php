@@ -33,6 +33,7 @@
 		<script src="js/Controller/DeviceInfoController.js"></script>
 		<script src="js/Controller/DeviceDataController.js"></script>
 		<script src="js/Controller/DeviceChartController.js"></script>
+		<script src="js/Controller/ApiController.js"></script>
 
 		<!-- Factory -->
 
