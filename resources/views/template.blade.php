@@ -53,47 +53,104 @@
 					<ul class="right hide-on-med-and-down space valign-wrapper">
 						<li><a href="{{ url('/device') }}"> DEVICES </a></li>
 
-						@if(!Auth::guest())
+						<!-- @if(Session::has('user'))
 							<li><a href="{{ url('/analyze') }}"> ANALYZE </a></li>
-						@endif
+						@endif -->
 
 						<li><a href="{{ url('/api') }}" class=""> API </a></li>
 
-						@if (Auth::guest())
-							<li><a href="{{ url('/auth/login') }}" target="_self"> LOG IN </a></li>
+						<!-- @if (!Session::has('user'))
+							<li><a href="{{ url('auth/login') }}" target="_self"> LOG IN </a></li>
 							<div class="tmp"></div>
 							<li><a href="{{ url('') }}" target="_self" class="sign-up"> SIGN UP </a></li>
 						@else
-							<li><a class="dropdown-button" href="" data-activates="dropdown1"> {{ Auth::user()->name }} <i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+							<li><a class="dropdown-button" href="" data-activates="dropdown1">{{ Session::get('user')->name }}  <i class="mdi-navigation-arrow-drop-down right"></i></a></li>
 							<ul id="dropdown1" class="dropdown-content">
-								<li><a href="{{ url('/auth/logout') }}" target="_self"> LOG OUT </a></li>
+								<li><a href="{{ url('/user/logout') }}" target="_self"> LOG OUT </a></li>
 							</ul>
-						@endif
+						@endif -->
 					</ul>
 
 					<ul id="nav-mobile" class="side-nav pink lighten-4">
-						@if (Auth::guest())
+						<!-- @if (!Session::has('user'))
 							<li><a href="{{ url('') }}" target="_self" class="blue-grey-text darken-4-text"><b> SIGN UP </b></a></li>
-							<li><a href="{{ url('/auth/login') }}" target="_self" class="blue-grey-text darken-4-text"> LOG IN </a></li>
+							<li><a href="{{ url('auth/login') }}" target="_self" class="blue-grey-text darken-4-text"> LOG IN </a></li>
 						@else
-							<li><a class="dropdown-button" href="" data-activates="dropdown1" class="blue-grey-text darken-4-text"> {{ Auth::user()->name }} <i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+							<li><a class="dropdown-button" href="" data-activates="dropdown1" class="blue-grey-text darken-4-text"> {{ Session::get('user')->name }} <i class="mdi-navigation-arrow-drop-down right"></i></a></li>
 							<ul id="dropdown1" class="dropdown-content">
-								<li><a href="{{ url('/auth/logout') }}" target="_self" class="blue-grey-text darken-4-text"> LOG OUT </a></li>
+								<li><a href="{{ url('/user/logout') }}" target="_self" class="blue-grey-text darken-4-text"> LOG OUT </a></li>
 							</ul>
-						@endif
+						@endif -->
 
 						<li><a href="{{ url('/device') }}" class="blue-grey-text darken-4-text"> DEVICES </a></li>
 
-						@if(!Auth::guest())
+						<!-- @if(Session::has('user'))
 							<li><a href="{{ url('/analyze') }}" class="blue-grey-text darken-4-text"> ANALYZE </a></li>
-						@endif
+						@endif -->
 						
 						<li><a href="{{ url('/api') }}" class="blue-grey-text darken-4-text"> API </a></li>
+
+						<!-- @if(Session::has('user'))
+							<li><a href="{{ url('/user/logout') }}" target="_self" class="blue-grey-text darken-4-text"> LOG OUT </a></li>
+						@endif -->
 					</ul>
 					
 					<a href="#" data-activates="nav-mobile" class="button-collapse space right"><i class="material-icons">menu</i></a>
 				</div>
 			</nav>
+			
+			<!-- <nav>
+			    <div class="nav-wrapper">
+					<a href="{{ url('/') }}" class="brand-logo space"><img src="../picture/text.png" alt="Text" height="41" width="111.11"></a>
+
+					<ul class="right hide-on-med-and-down space valign-wrapper">
+						<li><a href="{{ url('/device') }}"> DEVICES </a></li>
+
+						@if(Session::has('user'))
+							<li><a href="{{ url('/analyze') }}"> ANALYZE </a></li>
+						@endif
+
+						<li><a href="{{ url('/api') }}" class=""> API </a></li>
+
+						@if (!Session::has('user'))
+							<li><a href="{{ url('auth/login') }}" target="_self"> LOG IN </a></li>
+							<div class="tmp"></div>
+							<li><a href="{{ url('') }}" target="_self" class="sign-up"> SIGN UP </a></li>
+						@else
+							<li><a class="dropdown-button" href="" data-activates="dropdown1">{{ Session::get('user')->name }}  <i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+							<ul id="dropdown1" class="dropdown-content">
+								<li><a href="{{ url('/user/logout') }}" target="_self"> LOG OUT </a></li>
+							</ul>
+						@endif
+					</ul>
+
+					<ul id="nav-mobile" class="side-nav pink lighten-4">
+						@if (!Session::has('user'))
+							<li><a href="{{ url('') }}" target="_self" class="blue-grey-text darken-4-text"><b> SIGN UP </b></a></li>
+							<li><a href="{{ url('auth/login') }}" target="_self" class="blue-grey-text darken-4-text"> LOG IN </a></li>
+						@else
+							<li><a class="dropdown-button" href="" data-activates="dropdown1" class="blue-grey-text darken-4-text"> {{ Session::get('user')->name }} <i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+							<ul id="dropdown1" class="dropdown-content">
+								<li><a href="{{ url('/user/logout') }}" target="_self" class="blue-grey-text darken-4-text"> LOG OUT </a></li>
+							</ul>
+						@endif
+
+						<li><a href="{{ url('/device') }}" class="blue-grey-text darken-4-text"> DEVICES </a></li>
+
+						@if(Session::has('user'))
+							<li><a href="{{ url('/analyze') }}" class="blue-grey-text darken-4-text"> ANALYZE </a></li>
+						@endif
+						
+						<li><a href="{{ url('/api') }}" class="blue-grey-text darken-4-text"> API </a></li>
+
+						@if(Session::has('user'))
+							<li><a href="{{ url('/user/logout') }}" target="_self" class="blue-grey-text darken-4-text"> LOG OUT </a></li>
+						@endif
+					</ul>
+					
+					<a href="#" data-activates="nav-mobile" class="button-collapse space right"><i class="material-icons">menu</i></a>
+				</div>
+			</nav> -->
 		</div>
 
 		<div>
@@ -118,7 +175,7 @@
 					}
 				);
 
-				$('select').material_select();
+				// $('select').material_select();
 				
 				@yield('script')
 

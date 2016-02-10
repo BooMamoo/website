@@ -17,5 +17,17 @@ Route::get('/data/device/{device_id}/info', 'DataController@getInfo');
 Route::get('/data/device/{device_id}/type/{type_id}/data', 'DataController@getData');
 Route::get('/data/device/{device_id}/type/{type_id}/chart', 'DataController@chart');
 
-Route::get('/', 'IndexController@index');
+// Route::get('/auth/login', [
+// 	'as' => 'login',
+// 	'uses' => 'UserController@index'
+// ]);
+
+// Route::post('/user/login', 'UserController@login');
+// Route::get('/user/logout', 'UserController@logout');
+
+Route::get('/', [
+	'as' => 'root',
+	'uses' => 'IndexController@index'
+]);
+
 Route::get('{any}', 'IndexController@index')->where('any', '.*');

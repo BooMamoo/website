@@ -39,28 +39,39 @@ footer.page-footer
 
 .banner
 {
-	background: url('../picture/background2.png') no-repeat;
+	background: url('../picture/bg.png') no-repeat;
 	background-size: cover;
 	background-position: top center;
+	overflow: hidden;
 	height: 685px;
 }
 
-.logo
+.wrapper
 {
-	display: inline-block;
 	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.caption p
+{
+	font-weight: lighter;
+	font-size: 50px;
+	display: inline-block;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.6) none repeat scroll 0% 0%;
+}
+
+p.detail
+{
+	font-size: 22px;
+	margin-left: 20%;
+	margin-right: 20%;
 }
 
 .top-bottom, .picture
 {
 	margin-top: 5%;
 	margin-bottom: 5%;
-}
-
-.explanation
-{
-	padding-left: 20%;
-	padding-right: 20%;
 }
 
 .about, .feature, .about-us
@@ -70,9 +81,19 @@ footer.page-footer
 	margin: 0px;
 }
 
+.icon-block
+{
+	margin: 5%;
+}
+
 .topic-home
 {
 	margin-bottom: 5%;
+}
+
+.info-text
+{
+	font-size: 18px;
 }
 
 .mean
