@@ -51,6 +51,17 @@ app.config(function($routeProvider, $locationProvider) {
 		controller: 'ApiController'
 	});
 
+	$routeProvider.when('/netpie', {
+		templateUrl: 'pages/netpie.html',
+		controller: 'NetpieController', 
+		resolve: {
+			data: ['$http', '$route', function($http){
+				return $http.get("data/netpie");
+			}]
+		}
+	});
+
+
 	$routeProvider.otherwise({
 		redirectTo: '/'
 	});
