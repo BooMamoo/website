@@ -1,5 +1,6 @@
 app.controller('DeviceController', function($scope, $http, $location, data) {
     $scope.locals = data.data;
+    $scope.no_device = false;
 
     $scope.$watch('idLocal', function () 
     {
@@ -10,6 +11,15 @@ app.controller('DeviceController', function($scope, $http, $location, data) {
                 $scope.devices = response;
                 $scope.tmp = response;
                 $scope.search = undefined;
+
+                if($scope.devices.length == 0)
+                {
+                    $scope.no_device = true;
+                }
+                else
+                {
+                    $scope.no_device = false;
+                }
             });
         }
     });
@@ -26,6 +36,15 @@ app.controller('DeviceController', function($scope, $http, $location, data) {
             	{
             		$scope.devices.push($scope.tmp[i]);
             	}
+            }
+
+            if($scope.devices.length == 0)
+            {
+                $scope.no_device = true;
+            }
+            else
+            {
+                $scope.no_device = false;
             }
         }
     });

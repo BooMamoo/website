@@ -1,3 +1,8 @@
+body
+{
+	background-color: #fffde7;
+}
+
 .space
 {
     margin-left: 2%; 
@@ -96,6 +101,11 @@ p.detail
 	font-size: 18px;
 }
 
+.logo
+{
+	margin-top: 50px;
+}
+
 .mean
 {
 	background: url('../picture/background3.png') no-repeat;
@@ -108,6 +118,32 @@ p.detail
 
 /* Device Page */
 
+.content
+{
+	margin-top: 100px;
+    min-height: 409px;
+    margin-bottom: 50px;
+}
+
+.page-header p
+{
+	font-size: 40px;
+}
+
+.divider
+{
+	height: 1.5px;
+	margin-top: -15px;
+}
+
+.page-content
+{
+	margin: 20px;
+	margin-top: 50px;
+	padding: 20px 50px 20px 50px;
+	border-radius: 10px;
+}
+
 input[type="text"]:focus:not([readonly]), 
 textarea.materialize-textarea:focus:not([readonly]) 
 {
@@ -115,20 +151,116 @@ textarea.materialize-textarea:focus:not([readonly])
     box-shadow: 0px 0px 0px 0px;
 }
 
-input[type="text"] 
+input[type="text"].search 
 {
-    background-color: #bdbdbd;
+    background-color: white;
     border: 0px none;
-    border-radius: 3px;
+    border-radius: 5px;
     box-sizing: border-box;
     color: black;
     height: 46px;
     padding-left: 15px;
     outline: medium none;
+    margin-top: 20px;
+}
+
+.search
+{
+	margin-top: 20px;
+	background-color: #e0e0e0;
+	border-radius: 5px;
+}
+
+.search .input-field
+{
+	margin-top: 0px;
 }
 
 .select-wrapper input.select-dropdown
 {
-	background-color: #bdbdbd;
-	border-width: 0px;
+	margin-top: 20px;
 }
+
+.card-detail
+{
+	margin-top: 20px;
+}
+
+.card .card-action 
+{
+    border-top: 1px solid #00838f;
+}
+
+/* End of Device Page */
+
+/* Info Page */
+
+.collection
+{
+	overflow: visible;
+}
+
+.content-text
+{
+	font-size: 18px;
+}
+
+.content-text .collection-item
+{
+	font-size: 14px;
+}
+
+.btn-content
+{
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.fixed-action-btn
+{
+	position: absolute;
+	bottom: auto;
+}
+
+/* End of Info Page */
+
+/* Data Page */
+
+table
+{
+	font-size: 16px;
+}
+
+.no-info
+{
+    font-size: 40px;
+    margin: 20px;
+    padding: 40px;
+}
+
+.current
+{
+	background-color: #64b5f6;
+	border-radius: 5px;
+}
+
+.axis
+{
+	font-size: 14px;
+}
+
+table
+{
+	margin-bottom: 50px;
+}
+
+/* End of Data Page */
+
+/* API Page */
+
+strong.topic
+{
+	font-size: 30px;
+}
+
+/* End of API Page */

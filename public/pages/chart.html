@@ -1,8 +1,40 @@
-<div class="container">
-	<h3 class="center">Chart</h3>
+<div class="container content">
+	<div class="page-header">
+		<p class="blue-grey-text darken-4-text"><strong>{{ name }} - Chart</strong></p>
+		<div class="divider"></div>
+	</div>
 
-	<canvas id="line" class="chart chart-line" data="data" labels="labels"></canvas> 
+	<div class="page-content blue-grey lighten-5">
+		<div class="content-text">
+			<div class="row">
+				<div class="col s3">
+					<p><strong>Type</strong></p>
+				</div>
+				<div class="col s9">
+					<p class="light">{{ standard[0].type.type }}</p>
+				</div>
 
-	<p class="center chart-text">Show value today</p>
+				<div class="col s3">
+					<p><strong>Unit</strong></p>
+				</div>				
+				<div class="col s9">
+					<p class="light">{{ standard[0].unit }}</p>
+				</div>
+			</div>
+		
+			<div class="chart" ng-if="show">
+				<canvas id="line" class="chart chart-line" data="data" labels="labels"></canvas> 
+				<p class="axis center">Axis x : <span class="light">Value</span> | Axis y : <span class="light">Time</span></p>
+				<p class="center chart-text">Show {{ name }}'s today value</p>
+			</div>
+		</div>
+		
+		<div class="no-info center" ng-if="!show">
+			No Information
+		</div>
+	</div>
 
+	<div class="row">
+    	<a class="waves-effect waves-light btn right" href="" ng-click="back(device_id)">Back</a>
+    </div>
 </div>

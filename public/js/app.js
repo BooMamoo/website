@@ -32,6 +32,9 @@ app.config(function($routeProvider, $locationProvider) {
 		resolve: {
 			data: ['$http', '$route', function($http, $route){
 				return $http.get("data/device/" + $route.current.params.device + "/type/" + $route.current.params.type + "/data");
+			}],
+			current: ['$http', '$route', function($http, $route){
+				return $http.get("data/device/" + $route.current.params.device + "/type/" + $route.current.params.type + "/current");
 			}]
 		}
 	});

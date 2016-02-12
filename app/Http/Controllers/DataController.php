@@ -50,6 +50,16 @@ class DataController extends Controller
         return $response->getBody()->getContents();
     }
 
+    public function getCurrentData($device_id, $type_id)
+    {
+        $ip = config('ip');
+        $url = $ip . '/api/device/' . $device_id . '/type/' . $type_id .'/current';
+        $client = new Client();
+        $response = $client->request('GET', $url);
+        
+        return $response->getBody()->getContents();
+    }
+
     public function chart($device_id, $type_id)
     {
         $ip = config('ip');

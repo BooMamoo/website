@@ -1,7 +1,63 @@
-<div>
-	Data
-</div>
+<div class="container content">
+	<div class="page-header">
+		<p class="blue-grey-text darken-4-text"><strong>{{ name }} - Data</strong></p>
+		<div class="divider"></div>
+	</div>
 
-<div ng-repeat="value in data">
-	{{value.value}}
+	<div class="page-content blue-grey lighten-5">
+		<div class="content-text">
+			<div class="row">
+				<div class="col s3">
+					<p><strong>Type</strong></p>
+				</div>
+				<div class="col s9">
+					<p class="light">{{ standard[0].type.type }}</p>
+				</div>
+
+				<div class="col s3">
+					<p><strong>Unit</strong></p>
+				</div>				
+				<div class="col s9">
+					<p class="light">{{ standard[0].unit }}</p>
+				</div>
+			</div>
+
+			<div class="current row">
+				<div class="col s3">
+					<p><strong>Current data</strong></p>
+				</div>
+				<div class="col s9">
+					<p class="light">{{ current.value | number: 2 }}</p>
+				</div>
+			</div>
+
+			<table class="striped centered" ng-if="num != 0">
+				<thead>
+					<tr>
+						<th data-field="no">No.</th>
+						<th data-field="date">Date</th>
+						<th data-field="time">Time</th>
+						<th data-field="value">Value</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="convert in converts">
+						<td class="light">{{ $index + 1 }}</td>
+						<td class="light">{{ convert.timestamp | date:"dd-MM-yyyy" }}</td>
+						<td class="light">{{ convert.timestamp | date:"HH:mm:ss" }}</td>
+						<td class="light">{{ convert.value | number:2 }}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="no-info center" ng-if="num == 0">
+				No Information
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+    	<a class="waves-effect waves-light btn right" href="" ng-click="back(device_id)">Back</a>
+    </div>
 </div>

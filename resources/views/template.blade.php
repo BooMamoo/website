@@ -10,14 +10,15 @@
 		<meta name="keywords" content="iot platform">
 		<meta name="description" content="The project is about creating an IoT platform for connecting many devices into one point which we can easily manage or get the data.">
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">	
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- <link rel="stylesheet" href="css/fonts.css"> -->
 		<!-- <link rel="stylesheet" href="css/materialize.min.css"> -->
 		<link rel="stylesheet" href="css/angular-chart.css">
 		<link rel="stylesheet" href="css/template.css">
 
 		<script src="js/jquery.min.js"></script>
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>	 -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>	 -->
 		<script src="js/materialize.min.js"></script> 
 		<script src="js/angular.js"></script> 
 		<script src="js/angular-route.js"></script> 
@@ -34,6 +35,7 @@
 		<script src="js/Controller/DeviceDataController.js"></script>
 		<script src="js/Controller/DeviceChartController.js"></script>
 		<script src="js/Controller/ApiController.js"></script>
+		<script src="js/Controller/NetpieController.js"></script>
 
 		<!-- Factory -->
 
@@ -176,8 +178,11 @@
 					}
 				);
 
-				// $('select').material_select();
-				
+				$('select').material_select();
+
+				$('.fixed-action-btn').openFAB();
+				$('.fixed-action-btn').closeFAB();
+        
 				@yield('script')
 
 			});

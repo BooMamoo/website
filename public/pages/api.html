@@ -1,439 +1,104 @@
-<div>
-	<p>API</p>
-</div>
-
-<div>
-	<div class="pink lighten-5">
-		<h3>Get All Local</h3>
-		<p class="light">Get the list of local site in the system.</p>
-
-		<strong>Request</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="method">Method</th>
-					<th data-field="url">URL</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>GET</td>
-					<td>/api/local</td>
-				</tr>
-			</tbody>
-		</table>
-            
-		<!-- <strong>Request Header</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="type">Type</th>
-					<th data-field="param">Params</th>
-					<th data-field="value">Values</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>HEAD</td>
-					<td>Auth-Key</td>
-					<td>String</td>
-				</tr>
-			</tbody>
-		</table> -->
-
-		<strong>Request Body</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="body">Request Body</th>
-					<th data-field="format">Data Format</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>No</td>
-					<td>-</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<strong>Response</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="status">Status</th>
-					<th data-field="response">Response</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>200</td>
-					<td>[{
-							"id":"1",
-							"name":"Local A",
-							"constant":"0",
-							"created_at":"2016-01-08 23:12:10",
-							"updated_at":"2016-01-08 23:12:10"
-						}]</td>
-				</tr>
-			</tbody>
-		</table>
+<div class="container content">
+	<div class="page-header">
+		<p class="blue-grey-text darken-4-text"><strong>API</strong></p>
+		<div class="divider"></div>
 	</div>
 
-	<div class="pink lighten-5">
-		<h3>Get Devices by Local</h3>
-		<p class="light">Get all devices in a specific local site.</p>
+	<div class="page-content blue-grey lighten-5" ng-repeat="api in data">
+		<div class="content-text">
+			<p><strong class="topic">{{ api.method }}</strong></p>
 
-		<strong>Request</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="method">Method</th>
-					<th data-field="url">URL</th>
-				</tr>
-			</thead>
+			<div class="row">
+				<div class="col s3">
+					<p><strong>Description</strong></p>
+				</div>
 
-			<tbody>
-				<tr>
-					<td>GET</td>
-					<td>/api/local/{local_id}/device</td>
-				</tr>
-			</tbody>
-		</table>
-            
-		<!-- <strong>Request Header</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="type">Type</th>
-					<th data-field="param">Params</th>
-					<th data-field="value">Values</th>
-				</tr>
-			</thead>
+				<div class="col s9">
+					<p class="light">{{ api.description }}</p>
+				</div>
+			</div>
 
-			<tbody>
-				<tr>
-					<td>HEAD</td>
-					<td>Auth-Key</td>
-					<td>String</td>
-				</tr>
-			</tbody>
-		</table> -->
+			<div>
+				<p><strong>Request</strong></p>
 
-		<strong>Request Body</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="body">Request Body</th>
-					<th data-field="format">Data Format</th>
-				</tr>
-			</thead>
+				<table class="striped centered api-table">
+					<thead>
+						<tr>
+							<th data-field="method">Method</th>
+							<th data-field="url">URL</th>
+						</tr>
+					</thead>
 
-			<tbody>
-				<tr>
-					<td>No</td>
-					<td>-</td>
-				</tr>
-			</tbody>
-		</table>
+					<tbody>
+						<tr>
+							<td class="light">{{ api.request.method }}</td>
+							<td class="light">{{ api.request.url }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-		<strong>Response</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="status">Status</th>
-					<th data-field="response">Response</th>
-				</tr>
-			</thead>
+			<!-- <div>
+				<p><strong>Request Header</strong></p>
 
-			<tbody>
-				<tr>
-					<td>200</td>
-					<td>[{
-							"id":"1",
-							"name":"Device1",
-							"location":"Bangkok",
-							"interval":"5",
-							"local_id":"1",
-							"created_at":"-0001-11-30 00:00:00",
-							"updated_at":"-0001-11-30 00:00:00"
-						}]</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+				<table class="striped centered api-table">
+					<thead>
+						<tr>
+							<th data-field="type">Type</th>
+							<th data-field="param">Params</th>
+							<th data-field="value">Values</th>
+						</tr>
+					</thead>
 
-	<div class="pink lighten-5">
-		<h3>Get Devices Information by ID</h3>
-		<p class="light">Get a specific device information by id.</p>
+					<tbody>
+						<tr>
+							<td>HEAD</td>
+							<td>Auth-Key</td>
+							<td>String</td>
+						</tr>
+					</tbody>
+				</table>
+			</div> -->
 
-		<strong>Request</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="method">Method</th>
-					<th data-field="url">URL</th>
-				</tr>
-			</thead>
+			<div>
+				<p><strong>Request Body</strong></p>
 
-			<tbody>
-				<tr>
-					<td>GET</td>
-					<td>/api/device/{device_id}/info</td>
-				</tr>
-			</tbody>
-		</table>
-            
-		<!-- <strong>Request Header</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="type">Type</th>
-					<th data-field="param">Params</th>
-					<th data-field="value">Values</th>
-				</tr>
-			</thead>
+				<table class="striped centered api-table">
+					<thead>
+						<tr>
+							<th data-field="body">Request Body</th>
+							<th data-field="format">Data Format</th>
+						</tr>
+					</thead>
 
-			<tbody>
-				<tr>
-					<td>HEAD</td>
-					<td>Auth-Key</td>
-					<td>String</td>
-				</tr>
-			</tbody>
-		</table> -->
+					<tbody>
+						<tr>
+							<td class="light">{{ api.body.body }}</td>
+							<td class="light">{{ api.body.format }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-		<strong>Request Body</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="body">Request Body</th>
-					<th data-field="format">Data Format</th>
-				</tr>
-			</thead>
+			<div>
+				<p><strong>Response</strong></p>
 
-			<tbody>
-				<tr>
-					<td>No</td>
-					<td>-</td>
-				</tr>
-			</tbody>
-		</table>
+				<table class="striped centered api-table">
+					<thead>
+						<tr>
+							<th data-field="status">Status</th>
+							<th data-field="response">Response</th>
+						</tr>
+					</thead>
 
-		<strong>Response</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="status">Status</th>
-					<th data-field="response">Response</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>200</td>
-					<td>[{
-							"id":"1",
-							"name":"Device1",
-							"location":"Bangkok",
-							"interval":"5",
-							"local_id":"1",
-							"created_at":"-0001-11-30 00:00:00",
-							"updated_at":"-0001-11-30 00:00:00",
-							"mappings":[{
-								"id":"1",
-								"device_id":"1",
-								"type_id":"5",
-								"unit_id":"15",
-								"created_at":"-0001-11-30 00:00:00",
-								"updated_at":"-0001-11-30 00:00:00",
-								"type":{
-									"id":"5",
-									"type":"Temperature",
-									"created_at":"2016-01-08 23:12:10",
-									"updated_at":"2016-01-08 23:12:10"
-								},
-								"standard":{
-									"id":"1",
-									"type_id":"1",
-									"unit":"Lux",
-									"created_at":"2016-01-08 23:12:10",
-									"updated_at":"2016-01-08 23:12:10"
-								}
-							}]
-						}]</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-
-	<div class="pink lighten-5">
-		<h3>Get Devices Data by ID and Type</h3>
-		<p class="light">Get a specific device data by id and type.</p>
-
-		<strong>Request</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="method">Method</th>
-					<th data-field="url">URL</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>GET</td>
-					<td>/api/device/{device_id}/type/{type_id}/data</td>
-				</tr>
-			</tbody>
-		</table>
-            
-		<!-- <strong>Request Header</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="type">Type</th>
-					<th data-field="param">Params</th>
-					<th data-field="value">Values</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>HEAD</td>
-					<td>Auth-Key</td>
-					<td>String</td>
-				</tr>
-			</tbody>
-		</table> -->
-
-		<strong>Request Body</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="body">Request Body</th>
-					<th data-field="format">Data Format</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>No</td>
-					<td>-</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<strong>Response</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="status">Status</th>
-					<th data-field="response">Response</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>200</td>
-					<td>[{
-							"id":"24",
-							"device_id":"1",
-							"type_id":"5",
-							"value":"224.02",
-							"timestamp":"2015-12-10 20:07:40",
-							"created_at":"2016-01-11 08:58:04",
-							"updated_at":"2016-01-11 08:58:04"
-						}]</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-
-	<div class="pink lighten-5">
-		<h3>Get Devices Chart by ID and Type</h3>
-		<p class="light">Get a specific device chart by id and type.</p>
-
-		<strong>Request</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="method">Method</th>
-					<th data-field="url">URL</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>GET</td>
-					<td>/api/device/{device_id}/type/{type_id}/chart</td>
-				</tr>
-			</tbody>
-		</table>
-            
-		<!-- <strong>Request Header</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="type">Type</th>
-					<th data-field="param">Params</th>
-					<th data-field="value">Values</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>HEAD</td>
-					<td>Auth-Key</td>
-					<td>String</td>
-				</tr>
-			</tbody>
-		</table> -->
-
-		<strong>Request Body</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="body">Request Body</th>
-					<th data-field="format">Data Format</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>No</td>
-					<td>-</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<strong>Response</strong>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="status">Status</th>
-					<th data-field="response">Response</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>200</td>
-					<td>[{
-							"id":"24",
-							"device_id":"1",
-							"type_id":"5",
-							"value":"224.02",
-							"timestamp":"2015-12-10 20:07:40",
-							"created_at":"2016-01-11 08:58:04",
-							"updated_at":"2016-01-11 08:58:04"
-						}]</td>
-				</tr>
-			</tbody>
-		</table>
+					<tbody>
+						<tr>
+							<td class="light">{{ api.response.status }}</td>
+							<td class="light">{{ api.response.response }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 </div>

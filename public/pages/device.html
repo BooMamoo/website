@@ -1,32 +1,52 @@
-<div>
-	Device
-</div>
+<div class="container content">
+	<div class="page-header">
+		<p class="blue-grey-text darken-4-text"><strong>Devices</strong></p>
+		<div class="divider"></div>
 
-<div>
-	<div class="row">
+	<div class="row search">
+		<div class="select-box col s4">
+			<select ng-model="idLocal" convert-to-number class="black-text">
+				<option value="" disabled selected>Choose Local Site</option>
+				<option my-repeat-directive ng-repeat="local in locals" class="black-text" value="{{ local.id }}">{{ local.name }}</option>
+			</select>
+		</div>
+
 		<div class="input-field col s8">
-            <input id="search" type="text" class="validate black-text" placeholder="Search by name" ng-model="search">
+            <input id="search" type="text" class="validate search black-text" placeholder="Search by name" ng-model="search">
         </div>
-
-		<form id="local">
-			<div class="select-box col s4">
-				<select ng-model="idLocal" convert-to-number class="black-text">
-					<option value="" disabled selected>Choose Local Site</option>
-					<option my-repeat-directive ng-repeat="local in locals" class="black-text" value="{{ local.id }}">{{ local.name }}</option>
-				</select>
-			</div>
-		</form>
     </div>
-</div>
 
-<div>
-	<div class="row"> 
-		<div class="col s3 m3" ng-repeat="device in devices">
-			<div class="card-panel teal">
-				<p class="white-text">Name : {{ device.name }} </p>
-				<button ng-click="getInfo(device.id)">Info</button>
+	<div class="page-content row">
+		<div class="col s12 m4" ng-repeat="device in devices">
+			<div class="card cyan darken-2">
+				<div class="card-content white-text">
+					<span class="card-title"> {{ device.name }} </span>
+					<div class="card-detail row">
+						<div class="col s4">
+							Location
+						</div>
+						<div class="col s8 light">
+							{{ device.location }}
+						</div>
 
+						<div class="col s4">
+							Interval
+						</div>
+						<div class="col s8 light">
+							{{ device.interval }}
+							<span ng-if="device.interval == 1">Second</span>
+							<span ng-if="device.interval > 1">Seconds</span>
+						</div>
+					</div>
+				</div>
+				<div class="card-action">
+					<a href="" ng-click="getInfo(device.id)">Info</a>
+				</div>
 			</div>
 		</div>
-	</div>         
+	</div>
+
+	<div class="no-info grey-text center" ng-if="no_device">
+		<p>No Device</p>
+	</div>
 </div>
