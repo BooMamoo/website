@@ -67,7 +67,9 @@ app.controller('ApiController', function($scope) {
 								"id":"1", \
 								"device_id":"1", \
 								"type_id":"1", \
-								"unit_id":"1" \
+								"unit_id":"1", \
+                                "min_threshold":"0", \
+                                "max_threshold":"100", \
 								"type":{ \
 									"id":"1", \
 									"type":"Test" \
@@ -77,7 +79,11 @@ app.controller('ApiController', function($scope) {
 									"type_id":"1", \
 									"unit":"Test" \
 								} \
-							}] \
+							}], \
+                            "local":{ \
+                                "id":"1", \
+                                "name":"Test" \
+                            } \
 						}]'
     		}
     	}, 
@@ -95,13 +101,30 @@ app.controller('ApiController', function($scope) {
     		'response' : {
     			'status' : '200',
     			'response' : 
-    					'[{ \
-							"id":"1", \
-							"device_id":"1", \
-							"type_id":"1", \
-							"value":"xx.xx", \
-							"timestamp":"xxxx-xx-xx xx:xx:xx" \
-						}]'
+                        '{ \
+                            "id":"1", \
+                            "name":"Test", \
+                            "location":"Test", \
+                            "interval":"2", \
+                            "local_id":"1" \
+                            "standard":[{ \
+                                "id":"1", \
+                                "type_id":"1", \
+                                "unit":"Test", \
+                                "type":{ \
+                                    "id":"1", \
+                                    "type":"Test" \
+                                } \
+                            }], \
+                            "convert":[{ \
+                                "id":"1", \
+                                "device_id":"1", \
+                                "type_id":"1", \
+                                "value":"xx.xx", \
+                                "timestamp":"xxxx-xx-xx xx:xx:xx" \
+                            }] \
+                        }'
+
     		}
     	}, 
     	{
@@ -118,13 +141,34 @@ app.controller('ApiController', function($scope) {
     		'response' : {
     			'status' : '200',
     			'response' : 
-    					'[{ \
-							"id":"1", \
-							"device_id":"1", \
-							"type_id":"1", \
-							"value":"xx.xx", \
-							"timestamp":"xxxx-xx-xx xx:xx:xx" \
-						}]'
+    					'{ \
+                            "id":"1", \
+                            "name":"Test", \
+                            "location":"Test", \
+                            "interval":"2", \
+                            "local_id":"1" \
+                            "standard":[{ \
+                                "id":"1", \
+                                "type_id":"1", \
+                                "unit":"Test", \
+                                "type":{ \
+                                    "id":"1", \
+                                    "type":"Test" \
+                                } \
+                            }], \
+                            "chart":[{ \
+                                "id":"1", \
+                                "device_id":"1", \
+                                "type_id":"1", \
+                                "value":"xx.xx", \
+                                "timestamp":"xxxx-xx-xx xx:xx:xx", \
+                                "hour":"x" \
+                            }], \
+                            "threshold":[{ \
+                                "min_threshold":"0", \
+                                "max_threshold":"100" \
+                            }] \
+                        }'
     		}
     	}
     ]

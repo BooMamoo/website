@@ -3,12 +3,15 @@ app.controller("DeviceChartController", function ($scope, $location, data) {
 	$scope.device_id = data.data.id;
 	$scope.standard = data.data.standard;
 	$scope.chart = data.data.chart;
+	$scope.threshold = data.data.threshold[0];
 	$scope.show = false;
 
 	if($scope.chart.length != 0)
 	{
 		$scope.show = true;
-		$scope.data = [[]];
+		$scope.data = [[], [], []];
+		$scope.series = ['Min Threshold', 'Max Threshold', 'Data'];
+		$scope.colours = ['', '', ''];
 
 		$scope.labels = ['00:00', '01.00', '02.00', '03.00', '04:00', '05.00', '06.00', '07.00', 
 						 '08:00', '09.00', '10.00', '11.00', '12:00', '13.00', '14.00', '15.00', 
@@ -20,18 +23,24 @@ app.controller("DeviceChartController", function ($scope, $location, data) {
 		{
 			if(parseInt($scope.chart[num].hour) == i)
 			{
-				$scope.data[0][i] = $scope.chart[num].value;
+				$scope.data[2][i] = $scope.chart[num].value;
 				num++;
 			}
 			else
 			{
-				$scope.data[0][i] = null;
+				$scope.data[2][i] = null;
 			}
 
 			if(num == $scope.chart.length)
 			{
 				break;
 			}
+		}
+
+		for(var i = 0 ; i < 24 ; i++)
+		{
+			$scope.data[0][i] = $scope.threshold.min_threshold;
+			$scope.data[1][i] = $scope.threshold.max_threshold;
 		}
 	}
 
