@@ -21,7 +21,7 @@ nav .brand-logo
 	opacity: 0.7;
 }
 
-.sign-up
+.sign-up, .log-out
 {
 	border: 2px solid;
 	border-radius: 8px;
@@ -38,6 +38,29 @@ footer.page-footer
 {
 	margin-top: 0px;
 	padding-top: 0px;
+}
+
+/* Login Page */
+
+.content
+{
+    margin-top: 50px;
+    min-height: 429px;
+    margin-bottom: 50px;
+}
+
+.form
+{
+	margin-top: 80px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.text-form
+{
+    font-size: 20px;
+    margin-bottom: 50px;
+    margin-top: -5px;
 }
 
 /* Index Page */
@@ -118,13 +141,6 @@ p.detail
 
 /* Device Page */
 
-.content
-{
-	margin-top: 100px;
-    min-height: 409px;
-    margin-bottom: 50px;
-}
-
 .page-header p
 {
 	font-size: 40px;
@@ -144,7 +160,7 @@ p.detail
 	border-radius: 10px;
 }
 
-input[type="text"]:focus:not([readonly]), 
+input[type="text"]:focus:not([readonly]).search, 
 textarea.materialize-textarea:focus:not([readonly]) 
 {
     border-bottom: 0px;

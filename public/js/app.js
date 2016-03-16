@@ -6,6 +6,16 @@ app.config(function($routeProvider, $locationProvider) {
 		controller: 'IndexController'
 	});
 
+	$routeProvider.when('/login/', {
+		templateUrl: 'pages/login.html',
+		controller: 'LoginController'
+	});
+
+	$routeProvider.when('/register/', {
+		templateUrl: 'pages/register.html',
+		controller: 'RegisterController'
+	});
+
 	$routeProvider.when('/device/', {
 		templateUrl: 'pages/device.html',
 		controller: 'DeviceController',

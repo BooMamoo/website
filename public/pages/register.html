@@ -1,0 +1,37 @@
+<div class="container content">
+	<div class="row form blue-grey lighten-5">
+		<p class="text-form teal-text">Register</p>
+
+		<div class="col s12">
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="username" type="text" class="validate" name="username" ng-model="username">
+					<label for="username">Name</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="email" type="email" class="validate" name="email" ng-model="email">
+					<label for="email">E-mail Address</label>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="password" type="password" class="validate" name="password" ng-model="password">
+					<label for="password">Password</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="password" type="password" class="validate" name="password_confirmation" ng-model="password_confirmation">
+					<label for="password">Confirm Password</label>
+				</div>
+			</div>
+		    
+			<button class="btn waves-effect wave-light right submit" type="submit" name="action" ng-click="register()">Register</button>
+		</div>
+	</div>
+</div>

@@ -23,7 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $server_ip_address = 'http://192.168.1.49';
+        // $server_ip_address = 'http://server.app';
+        $server_ip_address = 'http://158.108.34.49/boo/iotserver';
 
         config([
             'ip' => $server_ip_address
