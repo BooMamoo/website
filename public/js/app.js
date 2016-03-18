@@ -16,6 +16,11 @@ app.config(function($routeProvider, $locationProvider) {
 		controller: 'RegisterController'
 	});
 
+	$routeProvider.when('/local/', {
+		templateUrl: 'pages/local.html',
+		controller: 'LocalController'
+	});
+	
 	$routeProvider.when('/device/', {
 		templateUrl: 'pages/device.html',
 		controller: 'DeviceController',

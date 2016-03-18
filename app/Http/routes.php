@@ -15,6 +15,8 @@ Route::post('/user/login', 'UserController@login');
 Route::post('/user/register', 'UserController@register');
 Route::get('/user/logout', 'UserController@logout');
 
+Route::post('/admin/local', 'UserController@local');
+
 Route::get('/data/local', 'DataController@local');
 Route::get('/data/local/{local_id}/device', 'DataController@device');
 Route::get('/data/device/{device_id}/info', 'DataController@getInfo');

@@ -70,4 +70,27 @@ class UserController extends Controller
 
         return redirect()->route('root');
     }
+
+    public function local(Request $request) 
+    {
+        $name = $request->input('name');
+        $place = $request->input('place');
+        $latitude = $request->input('latitude');
+        $longitude = $request->input('longitude');
+
+        $ip = config('ip');
+        $url = $ip . '/admin/local';
+        $client = new Client();
+
+        $response = $client->request('POST', $url, [
+            'json' => [
+                'name' => $name,
+                'place' => $place,
+                'latitude' => $latitude,
+                'longitude' => $longitude
+            ]
+        ]);
+
+        return $response->getBody()->getContents();
+    }
 }

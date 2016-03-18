@@ -26,11 +26,14 @@
 		<script src="js/Chart.js"></script> 
 		<script src="js/angular-chart.js"></script> 
 		<script src="js/app.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd1xMYT1bt99qtFWQEzXiRBvORDWHgPtk&libraries=places"></script>
 		
 		<!-- Controller -->
 
 		<script src="js/Controller/LoginController.js"></script>
 		<script src="js/Controller/RegisterController.js"></script>
+		<script src="js/Controller/LocalController.js"></script>
+		<script src="js/Controller/AnalyzeController.js"></script>
 		<script src="js/Controller/IndexController.js"></script>
 		<script src="js/Controller/DeviceController.js"></script>
 		<script src="js/Controller/DeviceInfoController.js"></script>
@@ -44,6 +47,10 @@
 		<!-- Directive -->
 
 		<script src="js/Directive/RepeatDirective.js"></script>
+
+		<!-- Service -->
+
+		<script src="js/Service/MapService.js"></script>
 
 		<title> IoT PAS </title>
 		<link rel="shortcut icon" href="../picture/icon-web.png" type="image/png">

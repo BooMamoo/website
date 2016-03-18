@@ -63,6 +63,52 @@ footer.page-footer
     margin-top: -5px;
 }
 
+/* Local Page */
+
+#map 
+{ 
+	height: 400px;
+	margin: 20px 0;
+	border-radius: 5px;
+	border: 1px solid silver;
+}
+
+.search-icon
+{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+
+input[type="text"].search-wrapper
+{
+    border-color: transparent;
+	margin: 0px 0px 0px;
+	padding-left: 15px;
+}
+
+input[type="text"]:focus:not([readonly]).search-wrapper, 
+textarea.materialize-textarea:focus:not([readonly]) 
+{
+    border-bottom: 0px;
+    box-shadow: 0px 0px 0px 0px;
+}
+
+.alert
+{
+	padding: 20px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+.position
+{
+	margin-top: -20px;
+}
+
+/* End of Local Page */
+
 /* Index Page */
 
 .banner
