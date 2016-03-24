@@ -20,6 +20,16 @@ app.config(function($routeProvider, $locationProvider) {
 		templateUrl: 'pages/local.html',
 		controller: 'LocalController'
 	});
+
+	$routeProvider.when('/analyze/', {
+		templateUrl: 'pages/analyze.html',
+		controller: 'AnalyzeController',
+		resolve: {
+			data: ['$http', function($http){
+				return $http.get("data/local");
+			}]
+		}
+	});
 	
 	$routeProvider.when('/device/', {
 		templateUrl: 'pages/device.html',
