@@ -30,15 +30,15 @@
 					</thead>
 
 					<tbody>
-						<tr>
-							<td class="light">{{ api.request.method }}</td>
-							<td class="light">{{ api.request.url }}</td>
+						<tr ng-repeat="request in api.request">
+							<td class="light">{{ request.method }}</td>
+							<td class="light">{{ request.url }}</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 
-			<!-- <div>
+			<div ng-if="api.hasOwnProperty('header')">
 				<p><strong>Request Header</strong></p>
 
 				<table class="striped centered api-table">
@@ -51,14 +51,14 @@
 					</thead>
 
 					<tbody>
-						<tr>
-							<td>HEAD</td>
-							<td>Auth-Key</td>
-							<td>String</td>
+						<tr ng-repeat="header in api.header">
+							<td class="light">{{ header.type }}</td>
+							<td class="light">{{ header.params }}</td>
+							<td class="light">{{ header.value }}</td>
 						</tr>
 					</tbody>
 				</table>
-			</div> -->
+			</div>
 
 			<div>
 				<p><strong>Request Body</strong></p>
@@ -72,9 +72,9 @@
 					</thead>
 
 					<tbody>
-						<tr>
-							<td class="light">{{ api.body.body }}</td>
-							<td class="light">{{ api.body.format }}</td>
+						<tr ng-repeat="body in api.body">
+							<td class="light">{{ body.body }}</td>
+							<td class="light">{{ body.format }}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -92,9 +92,9 @@
 					</thead>
 
 					<tbody>
-						<tr>
-							<td class="light">{{ api.response.status }}</td>
-							<td class="light">{{ api.response.response }}</td>
+						<tr ng-repeat="response in api.response">
+							<td class="light">{{ response.status }}</td>
+							<td class="light">{{ response.response }}</td>
 						</tr>
 					</tbody>
 				</table>

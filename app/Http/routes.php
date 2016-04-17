@@ -14,6 +14,7 @@
 Route::post('/user/login', 'UserController@login');
 Route::post('/user/register', 'UserController@register');
 Route::get('/user/logout', 'UserController@logout');
+Route::get('/user/permission', 'UserController@index');
 
 Route::post('/admin/local', 'UserController@local');
 

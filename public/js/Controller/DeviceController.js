@@ -1,6 +1,7 @@
-app.controller('DeviceController', function($scope, $http, $location, data) {
+app.controller('DeviceController', function($scope, $http, $location, data, permission) {
     $scope.locals = data.data;
     $scope.no_device = false;
+    $scope.permission = permission.data;
 
     $scope.$watch('idLocal', function () 
     {

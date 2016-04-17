@@ -7,9 +7,15 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Session;
 use GuzzleHttp\Client;
+// use Crypt;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        return $this->check(Session::get('user'));
+    }
+
     public function login(Request $request)
     {
         $email = $request->input('email');
@@ -31,6 +37,10 @@ class UserController extends Controller
         if($response->getBody()->getContents() != 'error')
         {
             $object = json_decode($response->getBody());
+            $object->password = $password;
+            // $object->password = Crypt::encrypt($password);
+            // $object->password = bcrypt($password);
+            
             Session::put('user', $object);
             
             return $content;
@@ -82,15 +92,38 @@ class UserController extends Controller
         $url = $ip . '/admin/local';
         $client = new Client();
 
+        $email = Session::get('user')->email;
+        $password = Session::get('user')->password;
+
         $response = $client->request('POST', $url, [
             'json' => [
                 'name' => $name,
                 'place' => $place,
                 'latitude' => $latitude,
                 'longitude' => $longitude
-            ]
+            ], 'auth' => [$email, $password, 'basic']
         ]);
 
         return $response->getBody()->getContents();
+    }
+
+    public function check($user)
+    {
+        if(empty($user))
+        {
+            return "none";
+        }
+        else if($user->isAdmin)
+        {
+            return "admin";
+        }
+        else if($user->canView)
+        {
+            return "view";
+        }
+        else
+        {
+            return "none";
+        }
     }
 }

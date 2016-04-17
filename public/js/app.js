@@ -18,7 +18,12 @@ app.config(function($routeProvider, $locationProvider) {
 
 	$routeProvider.when('/local/', {
 		templateUrl: 'pages/local.html',
-		controller: 'LocalController'
+		controller: 'LocalController',
+		resolve: {
+			permission: ['$http', function($http){
+				return $http.get("user/permission");
+			}]
+		}
 	});
 
 	$routeProvider.when('/analyze/', {
@@ -27,6 +32,9 @@ app.config(function($routeProvider, $locationProvider) {
 		resolve: {
 			data: ['$http', function($http){
 				return $http.get("data/local");
+			}],
+			permission: ['$http', function($http){
+				return $http.get("user/permission");
 			}]
 		}
 	});
@@ -37,6 +45,9 @@ app.config(function($routeProvider, $locationProvider) {
 		resolve: {
 			data: ['$http', function($http){
 				return $http.get("data/local");
+			}],
+			permission: ['$http', function($http){
+				return $http.get("user/permission");
 			}]
 		}
 	});
@@ -87,6 +98,10 @@ app.config(function($routeProvider, $locationProvider) {
 				return $http.get("data/netpie");
 			}]
 		}
+	});
+
+	$routeProvider.when('/error/401', {
+		templateUrl: 'pages/errors/401.html'
 	});
 
 

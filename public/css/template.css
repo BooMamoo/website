@@ -40,6 +40,18 @@ footer.page-footer
 	padding-top: 0px;
 }
 
+/* Error Page */
+
+.error-page
+{
+	margin: 20px;
+	margin-top: 78px;
+	padding: 20px 50px 20px 50px;
+	border-radius: 10px;
+}
+
+/* End of Error Page */
+
 /* Login Page */
 
 .content
@@ -186,6 +198,13 @@ p.detail
 /* End of Index Page */
 
 /* Device Page */
+
+.content-device
+{
+	margin-top: 50px;
+    min-height: 459px;
+    margin-bottom: 50px;
+}
 
 .page-header p
 {

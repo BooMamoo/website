@@ -1,4 +1,4 @@
-app.controller('LoginController', function($scope, $http, $window) {
+app.controller('LoginController', function($scope, $http) {
     $scope.login = function() {
         $http({
             method: 'POST',
@@ -14,10 +14,6 @@ app.controller('LoginController', function($scope, $http, $window) {
             }
             else
             {
-                $window.id = data.id;
-                $window.name = data.name;
-                $window.email = data.email;
-                $window.password = $scope.password;
                 window.location = '/';
             }
         });

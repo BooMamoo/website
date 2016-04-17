@@ -1,4 +1,4 @@
-<div class="container content">
+<div class="container content-device">
 	<div class="page-header">
 		<p class="blue-grey-text darken-4-text"><strong>Devices</strong></p>
 		<div class="divider"></div>
@@ -39,7 +39,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="card-action">
+				<div ng-if="permission == 'admin' || permission == 'view'" class="card-action">
 					<a href="" ng-click="getInfo(device.id)">Info</a>
 				</div>
 			</div>

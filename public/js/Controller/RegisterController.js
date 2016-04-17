@@ -24,15 +24,14 @@ app.controller('RegisterController', function($scope, $http, $location) {
                         'password_confirmation': $scope.password_confirmation
                     }
                 }).success(function(data) {
-                    console.log(data);
-                    if(data == "error")
-                    {
-                        Materialize.toast("Fail", 2000)
-                    }
-                    else
+                    if(data == "success")
                     {
                         Materialize.toast("Success", 2000)
                         $location.path('/login');
+                    }
+                    else
+                    {
+                        Materialize.toast(data, 2000)
                     }
                 });
             }
