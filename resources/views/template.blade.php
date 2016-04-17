@@ -71,6 +71,12 @@
 
 						<li><a href="{{ url('/api') }}" class=""> API </a></li>
 
+						@if(Session::has('user'))
+							@if(Session::get('user')->isAdmin)
+								<li><a href="{{ url('/local') }}"> LOCAL </a></li>
+							@endif
+						@endif
+
 						@if (!Session::has('user'))
 							<li><a href="{{ url('/login') }}" target="_self"> LOG IN </a></li>
 							<div class="tmp"></div>
