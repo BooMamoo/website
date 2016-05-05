@@ -25,6 +25,8 @@
 		<script src="js/angular-resource.js"></script>
 		<script src="js/Chart.js"></script> 
 		<script src="js/angular-chart.js"></script> 
+		<script src="js/ng-file-upload-shim.min.js"></script> 
+		<script src="js/ng-file-upload.min.js"></script> 
 		<script src="js/app.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd1xMYT1bt99qtFWQEzXiRBvORDWHgPtk&libraries=places"></script>
 		
@@ -40,7 +42,7 @@
 		<script src="js/Controller/DeviceDataController.js"></script>
 		<script src="js/Controller/DeviceChartController.js"></script>
 		<script src="js/Controller/ApiController.js"></script>
-		<script src="js/Controller/NetpieController.js"></script>
+		<script src="js/Controller/GatewayController.js"></script>
 
 		<!-- Factory -->
 
@@ -67,6 +69,7 @@
 
 						@if(Session::has('user'))
 							<li><a href="{{ url('/analyze') }}"> ANALYZE </a></li>
+							<li><a href="{{ url('/gateway') }}"> GATEWAY </a></li>
 						@endif
 
 						<li><a href="{{ url('/api') }}" class=""> API </a></li>
@@ -99,6 +102,7 @@
 
 						@if(Session::has('user'))
 							<li><a href="{{ url('/analyze') }}" class="blue-grey-text darken-4-text"> ANALYZE </a></li>
+							<li><a href="{{ url('/gateway') }}" class="blue-grey-text darken-4-text"> GATEWAY </a></li>
 						@endif
 						
 						<li><a href="{{ url('/api') }}" class="blue-grey-text darken-4-text"> API </a></li>
@@ -139,6 +143,10 @@
 
 				$('.fixed-action-btn').openFAB();
 				$('.fixed-action-btn').closeFAB();
+
+				$('.collapsible').collapsible({
+					accordion : false
+				});
         
 				@yield('script')
 

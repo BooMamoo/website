@@ -24,7 +24,10 @@ Route::get('/data/device/{device_id}/info', 'DataController@getInfo');
 Route::get('/data/device/{device_id}/type/{type_id}/data', 'DataController@getData');
 Route::get('/data/device/{device_id}/type/{type_id}/current', 'DataController@getCurrentData');
 Route::get('/data/device/{device_id}/type/{type_id}/chart', 'DataController@chart');
-Route::get('/data/netpie', 'DataController@netpie');
+
+Route::get('/data/gateway', 'GatewayController@index');
+Route::post('/store/gateway', 'GatewayController@store');
+Route::get('/download/gateway/{gateway_id}', 'GatewayController@download');
 
 Route::get('/', [
 	'as' => 'root',

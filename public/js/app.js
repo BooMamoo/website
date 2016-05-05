@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngResource', 'chart.js']);
+var app = angular.module('app', ['ngRoute', 'ngResource', 'chart.js', 'ngFileUpload']);
 
 app.config(function($routeProvider, $locationProvider) {
 	$routeProvider.when('/', {
@@ -90,12 +90,12 @@ app.config(function($routeProvider, $locationProvider) {
 		controller: 'ApiController'
 	});
 
-	$routeProvider.when('/netpie', {
-		templateUrl: 'pages/netpie.html',
-		controller: 'NetpieController', 
+	$routeProvider.when('/gateway', {
+		templateUrl: 'pages/gateway.html', 
+		controller: 'GatewayController',
 		resolve: {
-			data: ['$http', '$route', function($http){
-				return $http.get("data/netpie");
+			data: ['$http', function($http){
+				return $http.get("data/gateway");
 			}]
 		}
 	});
