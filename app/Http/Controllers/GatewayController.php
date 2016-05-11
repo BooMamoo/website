@@ -12,12 +12,6 @@ use Session;
 
 class GatewayController extends Controller
 {
-	public function tt()
-	{
-		$owner = Session::get('user')->name;
-		dd($email);
-	}
-
 	public function index()
     {
     	if($this->check(Session::get('user')))
