@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $server_ip_address = 'http://158.108.34.49/boo/iotserver';
-        $path = '/var/www/http/boo/website/';
+        $path = '/var/www/html/boo/website/';
         
         config([
             'ip' => $server_ip_address,
