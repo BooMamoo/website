@@ -133,7 +133,7 @@
 									<tbody>
 										<tr ng-repeat="gateway in gateways">
 											<td>{{ gateway.name }}</td>
-											<td>{{ gateway.owner }}</td>
+											<td>{{ gateway.user.name }}</td>
 											<td><a target="_self"><button class="btn waves-effect waves-light" type="submit" name="action" download="{{ gateway.name }}" ng-click="download(gateway)">Download</button></a></td>
 										</tr>
 									</tbody>
